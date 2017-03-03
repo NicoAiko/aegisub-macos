@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Aegisub for OS X
+
+  Created by リネマン・ニコ on 03.03.17.
+  Copyright © 2017 Nico Linnemann. All rights reserved.
+*/
+
+"comment.yes" = "Yes";
+"comment.no" = "No";

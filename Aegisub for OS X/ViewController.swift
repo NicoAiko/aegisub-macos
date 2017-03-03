@@ -307,7 +307,10 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         let columnIdentifier = tableColumn!.identifier
         
-        if columnIdentifier == "LineNumber" {
+        if columnIdentifier == "LineComment" {
+            let localeString = (self.assLines[row]?.comment)! ? "comment.yes" : "comment.no"
+            result.textField?.stringValue = NSLocalizedString(localeString, comment: "Comment")
+        } else if columnIdentifier == "LineNumber" {
             result.textField?.stringValue = (self.assLines[row]?.line)!
         } else if columnIdentifier == "LineStart" {
             result.textField?.stringValue = (self.assLines[row]?.start)!
@@ -324,14 +327,6 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             
             let modString = regex.stringByReplacingMatches(in: (self.assLines[row]?.text)!, options: [], range: range, withTemplate: "\u{263C}")
             result.textField?.stringValue = modString
-        }
-        
-        // let backgroundColor : CGColor? = NSColor.init(red: 200/255, green: 0, blue: 200/255, alpha: 0).cgColor.copy(alpha: 0.2)
-        
-        if self.assLines[row]?.comment == true {
-            result.textField?.textColor = NSColor.init(red: 150/255, green: 0, blue: 150/255, alpha: 1)
-        } else {
-            result.textField?.textColor = NSColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         }
         
         return result

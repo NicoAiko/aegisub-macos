@@ -1,0 +1,258 @@
+
+/* Class = "NSTextFieldCell"; placeholderString = "Actor"; ObjectID = "0np-7i-7FN"; */
+"0np-7i-7FN.placeholderString" = "Sprecher";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "1KR-N9-SqX"; */
+"1KR-N9-SqX.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Aegisub for OS X"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Aegisub for OS X";
+
+/* Class = "NSMenu"; title = "探す"; ObjectID = "1b7-l0-nxx"; */
+"1b7-l0-nxx.title" = "Suche";
+
+/* Class = "NSTableColumn"; headerCell.title = "スタート"; ObjectID = "1mR-4J-NVn"; */
+"1mR-4J-NVn.headerCell.title" = "Start";
+
+/* Class = "NSTableColumn"; headerCell.title = "スタイル"; ObjectID = "2tU-Xu-qvl"; */
+"2tU-Xu-qvl.headerCell.title" = "Style";
+
+/* Class = "NSMenuItem"; title = "探す"; ObjectID = "4EN-yA-p0u"; */
+"4EN-yA-p0u.title" = "Suche";
+
+/* Class = "NSMenuItem"; title = "Aegisub for OS Xを止める"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Aegisub for OS X beenden";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "59E-Vi-YGB"; */
+"59E-Vi-YGB.title" = "0";
+
+/* Class = "NSMenuItem"; title = "編集"; ObjectID = "5QF-Oa-p0T"; */
+"5QF-Oa-p0T.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "Aegisub for OS Xについて"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "Über Aegisub for OS X";
+
+/* Class = "NSMenuItem"; title = "リードゥ"; ObjectID = "6dh-zS-Vam"; */
+"6dh-zS-Vam.title" = "Rückgängig machen rückgängig machen";
+
+/* Class = "NSTextFieldCell"; title = "Default"; ObjectID = "7X5-bH-lKp"; */
+"7X5-bH-lKp.title" = "Default";
+
+/* Class = "NSMenuItem"; title = "入れ替わり"; ObjectID = "9ic-FL-obx"; */
+"9ic-FL-obx.title" = "Ersetzen";
+
+/* Class = "NSMenuItem"; title = "スマートコピー／ペースト"; ObjectID = "9yt-4B-nSM"; */
+"9yt-4B-nSM.title" = "Intelligentes Kopieren & Einfügen";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Hauptmenü";
+
+/* Class = "NSTableColumn"; headerCell.title = "CPS"; ObjectID = "BLk-hI-eaP"; */
+"BLk-hI-eaP.headerCell.title" = "CPS";
+
+/* Class = "NSMenuItem"; title = "設定"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Einstellungen";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Bn6-gd-kua"; */
+"Bn6-gd-kua.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "新データセーブ"; ObjectID = "Bw7-FT-i3A"; */
+"Bw7-FT-i3A.title" = "Speichern unter";
+
+/* Class = "NSTextFieldCell"; title = "1"; ObjectID = "Cta-k6-yxn"; */
+"Cta-k6-yxn.title" = "1";
+
+/* Class = "NSMenuItem"; title = "クロース"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "Schließen";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Ert-w8-29v"; */
+"Ert-w8-29v.title" = "Text Cell";
+
+/* Class = "NSMenu"; title = "ヘルプ"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Hilfe";
+
+/* Class = "NSMenuItem"; title = "Aegisub for OS X Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Aegisub for OS X Hilfe";
+
+/* Class = "NSMenu"; title = "入れ替わり"; ObjectID = "FeM-D8-WVr"; */
+"FeM-D8-WVr.title" = "Ersetzen";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "Fjt-r8-sZm"; */
+"Fjt-r8-sZm.title" = "Box";
+
+/* Class = "NSTextFieldCell"; title = "Test"; ObjectID = "HeA-mt-cNP"; */
+"HeA-mt-cNP.title" = "Test";
+
+/* Class = "NSMenuItem"; title = "開く"; ObjectID = "IAo-SY-fd9"; */
+"IAo-SY-fd9.title" = "Öffnen";
+
+/* Class = "NSWindow"; title = "Aegisub for OS X"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Aegisub for OS X";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "JcI-yE-wPK"; */
+"JcI-yE-wPK.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "全部を示す"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Alle einblenden";
+
+/* Class = "NSMenuItem"; title = "全ウィンドーを前へ"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Alle Fenster in Vordergrund";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "N16-lF-ZHT"; */
+"N16-lF-ZHT.title" = "0";
+
+/* Class = "NSMenuItem"; title = "ミニマイズ"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Minimieren";
+
+/* Class = "NSMenuItem"; title = "Aegisub for OS Xを隠す"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Aegisub for OS X ausblenden";
+
+/* Class = "NSMenuItem"; title = "前を探す"; ObjectID = "OwM-mh-QMV"; */
+"OwM-mh-QMV.title" = "Letztes Vorkommen";
+
+/* Class = "NSMenuItem"; title = "ズーム"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "全部をセレクト"; ObjectID = "Ruw-6m-B2m"; */
+"Ruw-6m-B2m.title" = "Alles auswählen";
+
+/* Class = "NSMenuItem"; title = "セレクションへジャンプ"; ObjectID = "S0p-oC-mLd"; */
+"S0p-oC-mLd.title" = "Zur Auswahl springen";
+
+/* Class = "NSMenu"; title = "ウィンドー"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Fenster";
+
+/* Class = "NSTableColumn"; headerCell.title = "コメント"; ObjectID = "Tep-Eg-7HX"; */
+"Tep-Eg-7HX.headerCell.title" = "Kommentar";
+
+/* Class = "NSTextFieldCell"; title = "00:00:05:00"; ObjectID = "TxG-d1-8on"; */
+"TxG-d1-8on.title" = "00:00:05:00";
+
+/* Class = "NSMenuItem"; title = "他を隠す"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Alle ausblenden";
+
+/* Class = "NSMenu"; title = "編集"; ObjectID = "W48-6f-4Dl"; */
+"W48-6f-4Dl.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "ニュー"; ObjectID = "Was-JA-tGl"; */
+"Was-JA-tGl.title" = "Neu";
+
+/* Class = "NSTableColumn"; headerCell.title = "テキスト"; ObjectID = "Xlr-k9-Nat"; */
+"Xlr-k9-Nat.headerCell.title" = "Text";
+
+/* Class = "NSMenuItem"; title = "探す"; ObjectID = "Xz5-n4-O0W"; */
+"Xz5-n4-O0W.title" = "Suchen";
+
+/* Class = "NSMenuItem"; title = "探し替わる"; ObjectID = "YEy-JH-Tfz"; */
+"YEy-JH-Tfz.title" = "Suchen und Ersetzen";
+
+/* Class = "NSTextFieldCell"; title = "00:00:05:00"; ObjectID = "ZCR-Uy-lNZ"; */
+"ZCR-Uy-lNZ.title" = "00:00:05:00";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "aNJ-0r-0Ss"; */
+"aNJ-0r-0Ss.title" = "0";
+
+/* Class = "NSMenuItem"; title = "ウィンドー"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Fenster";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Effect"; ObjectID = "aoy-r8-Gih"; */
+"aoy-r8-Gih.placeholderString" = "Effekt";
+
+/* Class = "NSTextFieldCell"; title = "00:00:00:00"; ObjectID = "bRz-GK-VGz"; */
+"bRz-GK-VGz.title" = "00:00:00:00";
+
+/* Class = "NSMenu"; title = "ファイル"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "Datei";
+
+/* Class = "NSButtonCell"; title = "コメント"; ObjectID = "bil-Hs-MTv"; */
+"bil-Hs-MTv.title" = "Kommentar";
+
+/* Class = "NSMenuItem"; title = "セレクトしたを探す"; ObjectID = "buJ-ug-pKt"; */
+"buJ-ug-pKt.title" = "Auswahl suchen";
+
+/* Class = "NSTextFieldCell"; title = "はい"; ObjectID = "dAt-rt-cxI"; */
+"dAt-rt-cxI.title" = "Ja";
+
+/* Class = "NSMenuItem"; title = "ファイル"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "Datei";
+
+/* Class = "NSMenuItem"; title = "アンドゥ"; ObjectID = "dRJ-4n-Yzg"; */
+"dRJ-4n-Yzg.title" = "Rückgängig machen";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "dlp-UD-zgu"; */
+"dlp-UD-zgu.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "gKs-4W-4BD"; */
+"gKs-4W-4BD.title" = "0";
+
+/* Class = "NSMenuItem"; title = "ペースト"; ObjectID = "gVA-U4-sdL"; */
+"gVA-U4-sdL.title" = "Einfügen";
+
+/* Class = "NSTableColumn"; headerCell.title = "#"; ObjectID = "hGs-e1-shJ"; */
+"hGs-e1-shJ.headerCell.title" = "#";
+
+/* Class = "NSMenuItem"; title = "スマート引用符"; ObjectID = "hQb-2v-fYv"; */
+"hQb-2v-fYv.title" = "Intelligente Anführungszeichen";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "hhz-a0-K4v"; */
+"hhz-a0-K4v.title" = "Text Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "エンド"; ObjectID = "iTp-Xn-P2q"; */
+"iTp-Xn-P2q.headerCell.title" = "Ende";
+
+/* Class = "NSMenu"; title = "開く歴史"; ObjectID = "oas-Oc-fiZ"; */
+"oas-Oc-fiZ.title" = "Zuletzt geöffnet";
+
+/* Class = "NSTextFieldCell"; title = "0"; ObjectID = "oya-1X-xaD"; */
+"oya-1X-xaD.title" = "0";
+
+/* Class = "NSMenuItem"; title = "消す"; ObjectID = "pa3-QI-u2k"; */
+"pa3-QI-u2k.title" = "Löschen";
+
+/* Class = "NSMenuItem"; title = "セーブ"; ObjectID = "pxx-59-PXV"; */
+"pxx-59-PXV.title" = "Speichern";
+
+/* Class = "NSMenuItem"; title = "次を探す"; ObjectID = "q09-fT-Sye"; */
+"q09-fT-Sye.title" = "Weitersuchen";
+
+/* Class = "NSBox"; title = "Box"; ObjectID = "rFg-au-Pax"; */
+"rFg-au-Pax.title" = "Box";
+
+/* Class = "NSMenuItem"; title = "スマートハイフン"; ObjectID = "rgM-f4-ycn"; */
+"rgM-f4-ycn.title" = "Intelligente Spiegelstriche";
+
+/* Class = "NSMenuItem"; title = "開く歴史"; ObjectID = "tXI-mr-wws"; */
+"tXI-mr-wws.title" = "Zuletzt geöffnet";
+
+/* Class = "NSTextFieldCell"; title = "00:00:00:00"; ObjectID = "tya-N9-5Eq"; */
+"tya-N9-5Eq.title" = "00:00:00:00";
+
+/* Class = "NSComboBoxCell"; title = "Default"; ObjectID = "u4d-QU-kts"; */
+"u4d-QU-kts.title" = "Default";
+
+/* Class = "NSComboBoxCell"; u4d-QU-kts.ibShadowedObjectValues[0] = "Default"; ObjectID = "u4d-QU-kts"; */
+"u4d-QU-kts.ibShadowedObjectValues[0]" = "Default";
+
+/* Class = "NSMenu"; title = "Aegisub for OS X"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Aegisub for OS X";
+
+/* Class = "NSMenuItem"; title = "カット"; ObjectID = "uRl-iY-unG"; */
+"uRl-iY-unG.title" = "Ausschneiden";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "urS-Hx-x6B"; */
+"urS-Hx-x6B.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Clear Menu"; ObjectID = "vNY-rz-j42"; */
+"vNY-rz-j42.title" = "Clear Menu";
+
+/* Class = "NSMenuItem"; title = "ヘルプ"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Hilfe";
+
+/* Class = "NSMenuItem"; title = "コピー"; ObjectID = "x3v-GG-iWU"; */
+"x3v-GG-iWU.title" = "Kopieren";
+
+/* Class = "NSTextFieldCell"; title = "00:00:05:00"; ObjectID = "xkd-kV-vP8"; */
+"xkd-kV-vP8.title" = "00:00:05:00";
+
+/* Class = "NSMenuItem"; title = "入れ替わりを見せる"; ObjectID = "z6F-FW-3nz"; */
+"z6F-FW-3nz.title" = "Suchen und Ersetzen zeigen";
