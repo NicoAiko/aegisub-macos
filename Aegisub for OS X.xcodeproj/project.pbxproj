@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		038079791CDFC73300C10916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038079781CDFC73300C10916 /* Assets.xcassets */; };
 		0380797C1CDFC73300C10916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0380797A1CDFC73300C10916 /* Main.storyboard */; };
 		03D3E49E1E68BCA700B548C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03D3E49C1E68BCA700B548C7 /* Localizable.strings */; };
-		03FC72AD1E6A1012006DBC01 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0380797D1CDFC73300C10916 /* Info.plist */; };
+		03DE82BE1E6AAA6000CC017F /* UserSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03DE82BD1E6AAA6000CC017F /* UserSettings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +27,7 @@
 		03B526C81E6A10A50020D801 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		03B526C91E6A10B40020D801 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03D3E49D1E68BCA700B548C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		03DE82BD1E6AAA6000CC017F /* UserSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UserSettings.plist; path = "Aegisub for OS X/UserSettings.plist"; sourceTree = "<group>"; };
 		03FC72AC1E6A1012006DBC01 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +45,7 @@
 		038079681CDFC73300C10916 = {
 			isa = PBXGroup;
 			children = (
+				03DE82BD1E6AAA6000CC017F /* UserSettings.plist */,
 				038079731CDFC73300C10916 /* Aegisub for OS X */,
 				038079721CDFC73300C10916 /* Products */,
 			);
@@ -97,7 +99,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Nico Linnemann";
 				TargetAttributes = {
 					038079701CDFC73300C10916 = {
@@ -107,7 +109,7 @@
 				};
 			};
 			buildConfigurationList = 0380796C1CDFC73300C10916 /* Build configuration list for PBXProject "Aegisub for OS X" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -131,7 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FC72AD1E6A1012006DBC01 /* Info.plist in Resources */,
+				03DE82BE1E6AAA6000CC017F /* UserSettings.plist in Resources */,
 				038079791CDFC73300C10916 /* Assets.xcassets in Resources */,
 				03D3E49E1E68BCA700B548C7 /* Localizable.strings in Resources */,
 				0380797C1CDFC73300C10916 /* Main.storyboard in Resources */,
@@ -217,7 +219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -259,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
