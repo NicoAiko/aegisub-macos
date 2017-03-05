@@ -1,0 +1,30 @@
+
+/* Class = "NSMenuItem"; title = "Deutsch"; ObjectID = "1ux-Y9-K0V"; */
+"1ux-Y9-K0V.title" = "Deutsch";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "Fvu-ve-dhU"; */
+"Fvu-ve-dhU.title" = "環境設定";
+
+/* Class = "NSTextFieldCell"; title = "Language:"; ObjectID = "McV-J5-541"; */
+"McV-J5-541.title" = "言語：";
+
+/* Class = "NSToolbarItem"; label = "Changelog"; ObjectID = "O66-yz-WIO"; */
+"O66-yz-WIO.label" = "更新情報";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Changelog"; ObjectID = "O66-yz-WIO"; */
+"O66-yz-WIO.paletteLabel" = "更新情報";
+
+/* Class = "NSMenuItem"; title = "English"; ObjectID = "RzQ-XH-fpc"; */
+"RzQ-XH-fpc.title" = "English";
+
+/* Class = "NSMenuItem"; title = "日本語"; ObjectID = "W6i-fK-tVf"; */
+"W6i-fK-tVf.title" = "日本語";
+
+/* Class = "NSToolbarItem"; label = "General"; ObjectID = "xr8-py-oDn"; */
+"xr8-py-oDn.label" = "一般";
+
+/* Class = "NSToolbarItem"; paletteLabel = "General"; ObjectID = "xr8-py-oDn"; */
+"xr8-py-oDn.paletteLabel" = "一般";
+
+/* Class = "NSTextField"; label = "Please restart the app to let the change take effect."; ObjectID = "aiU-Km-PG8"; */
+"aiU-Km-PG8.title" = "更新しました設定の効果を見る為に、アプリを再起動して下さい。";

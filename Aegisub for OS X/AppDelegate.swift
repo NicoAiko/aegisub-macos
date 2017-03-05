@@ -9,12 +9,18 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, NSToolbarDelegate {
 
+    private var preferences: Preferences?
 
+    @IBAction func showPreferences(_ sender: NSMenuItem) {
+        if preferences == nil {
+            preferences = Preferences()
+        }
+        preferences?.showWindow(self)
+    }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -140,8 +140,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         
         let line = "1"
-        let start = "00:00:00:00"
-        let end = "00:00:05:00"
+        let start = "0:00:00:00"
+        let end = "0:00:05:00"
         let cps = "0"
         let layer = "0"
         let style = "Default"
@@ -190,6 +190,10 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         }
         else if((obj.object as! NSTextField) == self.startTimeField || (obj.object as! NSTextField) == self.endTimeField || (obj.object as! NSTextField) == self.durationField) {
             checkTime(obj.object as! NSTextField)
+            
+            self.assLines[selectedLine]?.start = self.startTimeField.stringValue
+            self.assLines[selectedLine]?.end = self.endTimeField.stringValue
+            self.tableView.reloadData()
         }
     }
     
@@ -361,34 +365,108 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         if(differenceInMs < 0) {
             self.endTimeField.stringValue = startTime
-            return "00:00:00:00"
+            return "0:00:00:00"
         }
         
-        let differenceHour = differenceInMs/1000/60/60
-        let differenceMinutes = (differenceInMs - (differenceHour*60*60*1000))/1000/60
-        let differenceSeconds = (differenceInMs - (differenceHour*60*60*1000) - (differenceMinutes*60*1000))/1000
-        let differenceRestMS = (differenceInMs - (differenceHour*60*60*1000) - (differenceMinutes*60*1000) - (differenceSeconds*1000))
+        // end - start
+        let startHour = Int(start[0])!
+        let startMinute = Int(start[1])!
+        let startSec = Int(start[2])!
+        let startMilSec = Int(start[3])!
         
-        let difference = String(format: "%02d", differenceHour) + ":" + String(format: "%02d", differenceMinutes) + ":" + String(format: "%02d", differenceSeconds) + ":" + String(format: "%02d", differenceRestMS)
+        let endHour = Int(end[0])!
+        let endMinute = Int(end[1])!
+        let endSec = Int(end[2])!
+        let endMilSec = Int(end[3])!
+        
+        var carryFlag : Bool = false
+        
+        var diffMilSec = endMilSec - startMilSec
+        if diffMilSec < 0 {
+            diffMilSec = 100 - ((endMilSec - startMilSec) * (-1))
+            carryFlag = true
+        }
+        
+        var diffSec = endSec - startSec
+        if carryFlag {
+            diffSec -= 1
+            carryFlag = false
+        }
+        if diffSec < 0 {
+            diffSec = (endSec - startSec) * (-1) % 60
+            carryFlag = true
+        }
+        
+        var diffMinute = endMinute - startMinute
+        if carryFlag {
+            diffMinute -= 1
+            carryFlag = false
+        }
+        if diffMinute < 0 {
+            diffMinute = (endMinute - startMinute) * (-1) % 60
+            carryFlag = true
+        }
+        let diffHour = carryFlag ? endHour - startHour - 1 : endHour - startHour
+        
+        let difference = String(format: "%01d", diffHour) + ":" + String(format: "%02d", diffMinute) + ":" + String(format: "%02d", diffSec) + ":" + String(format: "%02d", diffMilSec)
         
         return difference
         
     }
     
     func calcNewLineEnd(_ startTime : String) -> String {
+        
         let start = startTime.components(separatedBy: ":")
         
+        // 9:59:59:99
+        // =    32400000
+        //    =  3540000
+        //       = 59000
+        //          = 99
+        //      35999099
+        
         let startInMs = (Int(start[0])!*60*60*1000) + (Int(start[1])!*60*1000) + (Int(start[2])!*1000) + Int(start[3])!
+        let endInMs = startInMs + 2000
         
-        let newEndTimeMS = startInMs + 2000
+        if(endInMs > 35999099) {
+            return startTime
+        }
         
-        let newEndTimeHour = newEndTimeMS/1000/60/60
-        let newEndTimeMinutes = (newEndTimeMS - (newEndTimeHour*60*60*1000))/1000/60
-        let newEndTimeSeconds = (newEndTimeMS - (newEndTimeHour*60*60*1000) - (newEndTimeMinutes*60*1000))/1000
-        let newEndTimeRestMS = (newEndTimeMS - (newEndTimeHour*60*60*1000) - (newEndTimeMinutes*60*1000) - (newEndTimeSeconds*1000))
+        let startHour = Int(start[0])!
+        let startMinute = Int(start[1])!
+        let startSec = Int(start[2])!
+        let startMilSec = Int(start[3])!
         
+        var carryFlag : Bool = false
         
-        let newEndTime = String(format: "%02d", newEndTimeHour) + ":" + String(format: "%02d", newEndTimeMinutes) + ":" + String(format: "%02d", newEndTimeSeconds) + ":" + String(format: "%02d", newEndTimeRestMS)
+        let newEndTimeRestMS = startMilSec
+        
+        var newEndTimeSeconds = startSec + 2
+        if newEndTimeSeconds >= 60 {
+            carryFlag = true
+            newEndTimeSeconds %= 60
+        }
+        
+        var newEndTimeMinutes = startMinute
+        if carryFlag {
+            newEndTimeMinutes += 1
+            carryFlag = false
+        }
+        if newEndTimeMinutes >= 60 {
+            carryFlag = true
+            newEndTimeMinutes %= 60
+        }
+        
+        var newEndTimeHour = startHour
+        if carryFlag {
+            carryFlag = false
+            newEndTimeHour += 1
+        }
+        if newEndTimeHour > 9 {
+            newEndTimeHour = 9
+        }
+        
+        let newEndTime = String(format: "%01d", newEndTimeHour) + ":" + String(format: "%02d", newEndTimeMinutes) + ":" + String(format: "%02d", newEndTimeSeconds) + ":" + String(format: "%02d", newEndTimeRestMS)
         
         return newEndTime
     }
@@ -686,7 +764,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         let ranges : [NSRange]
         
         do {
-            let regex = try NSRegularExpression(pattern: "([A-Za-z]+)", options: [])
+            let regex = try NSRegularExpression(pattern: "[^\\d:]", options: [])
             ranges = regex.matches(in: object.stringValue, options: [], range: NSMakeRange(0, object.stringValue.characters.count)).map {$0.range}
         } catch {
             ranges = []
@@ -701,6 +779,29 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             return
         }
         
+        let currentCursorPosition = (object.currentEditor()?.selectedRange.location)! - 1
+        let insertedChar = (object.stringValue as NSString).substring(with: NSMakeRange(currentCursorPosition, 1)) as NSString
+        let insertedCharacterArr = Array((insertedChar as String).characters)
+        let insertedCharacter = insertedCharacterArr[0]
+        
+        let match = insertedChar.range(of: "^\\d{1}$", options: .regularExpression)
+        if match.location != NSNotFound {
+            if currentCursorPosition == 1 || currentCursorPosition == 4 || currentCursorPosition == 7 {
+                object.stringValue.remove(at: object.stringValue.index(object.stringValue.startIndex, offsetBy: currentCursorPosition))
+                object.stringValue.replace(currentCursorPosition + 1, insertedCharacter)
+                object.currentEditor()?.moveForward(nil)
+            }
+            else if currentCursorPosition == 10 {
+                object.stringValue.remove(at: object.stringValue.index(object.stringValue.startIndex, offsetBy: currentCursorPosition))
+                object.currentEditor()?.moveBackward(nil)
+            }
+            else
+            {
+                object.stringValue.remove(at: object.stringValue.index(object.stringValue.startIndex, offsetBy: currentCursorPosition))
+                object.stringValue.replace(currentCursorPosition, insertedCharacter)
+            }
+        }
+        
         var timeStringArray = object.stringValue.components(separatedBy: ":")
         var timeInMS : Int = 0
         var multiplier : Int = (60*60*1000)
@@ -709,6 +810,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         for timeString in timeStringArray {
             if timeString.characters.count > 2 {
                 timeStringArray[idx].remove(at: timeString.characters.index(timeString.startIndex, offsetBy: 2))
+
             }
             
             timeInMS += Int(timeString)!*multiplier
@@ -725,12 +827,12 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         }
         
         
-        let newTimeHour = timeInMS/1000/60/60
-        let newTimeMinutes = (timeInMS - (newTimeHour*60*60*1000))/1000/60
-        let newTimeSeconds = (timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000))/1000
-        let newTimeRestMS = ((timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000) - (newTimeSeconds*1000)) >= 100 ? (timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000) - (newTimeSeconds*1000))/10 : (timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000) - (newTimeSeconds*1000)))
+        let newTimeHour = (timeInMS/1000/60/60 > 9 ? 9 : timeInMS/1000/60/60)
+        let newTimeMinutes = (timeInMS - (newTimeHour*60*60*1000))/1000/60 > 59 ? 59 : (timeInMS - (newTimeHour*60*60*1000))/1000/60
+        let newTimeSeconds = (timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000))/1000 > 59 ? 59 : (timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000))/1000
+        let newTimeRestMS = ((timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000) - (newTimeSeconds*1000)) > 99 ? 99 : (timeInMS - (newTimeHour*60*60*1000) - (newTimeMinutes*60*1000) - (newTimeSeconds*1000)))
         
-        let newTime = String(format: "%02d", newTimeHour) + ":" + String(format: "%02d", newTimeMinutes) + ":" + String(format: "%02d", newTimeSeconds) + ":" + String(format: "%02d", newTimeRestMS)
+        let newTime = String(format: "%01d", newTimeHour) + ":" + String(format: "%02d", newTimeMinutes) + ":" + String(format: "%02d", newTimeSeconds) + ":" + String(format: "%02d", newTimeRestMS)
         
         object.stringValue = newTime
         
@@ -745,20 +847,59 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     func calcTimeByDuration(_ startTime : String, duration : String) {
         
         let start = startTime.components(separatedBy: ":")
-        let startInMs = (Int(start[0])!*60*60*1000) + (Int(start[1])!*60*1000) + (Int(start[2])!*1000) + Int(start[3])!
-        
         let duration = duration.components(separatedBy: ":")
-        let durationInMs = (Int(duration[0])!*60*60*1000) + (Int(duration[1])!*60*1000) + (Int(duration[2])!*1000) + Int(duration[3])!
         
-        let newEndTimeMS = startInMs + durationInMs
+        let startHour = Int(start[0])!
+        let startMinute = Int(start[1])!
+        let startSec = Int(start[2])!
+        let startMilSec = Int(start[3])!
         
-        let newEndTimeHour = newEndTimeMS/1000/60/60
-        let newEndTimeMinutes = (newEndTimeMS - (newEndTimeHour*60*60*1000))/1000/60
-        let newEndTimeSeconds = (newEndTimeMS - (newEndTimeHour*60*60*1000) - (newEndTimeMinutes*60*1000))/1000
-        let newEndTimeRestMS = (newEndTimeMS - (newEndTimeHour*60*60*1000) - (newEndTimeMinutes*60*1000) - (newEndTimeSeconds*1000))
+        let durHour = Int(duration[0])!
+        let durMinute = Int(duration[1])!
+        let durSec = Int(duration[2])!
+        let durMilSec = Int(duration[3])!
         
+        if startHour + durHour > 9 {
+            return
+        }
         
-        self.endTimeField.stringValue = String(format: "%02d", newEndTimeHour) + ":" + String(format: "%02d", newEndTimeMinutes) + ":" + String(format: "%02d", newEndTimeSeconds) + ":" + String(format: "%02d", newEndTimeRestMS)
+        var carryFlag : Bool = false
+        
+        var endMilSec = startMilSec + durMilSec
+        if endMilSec >= 100 {
+            endMilSec %= 100
+            carryFlag = true
+        }
+        
+        var endSec = startSec + durSec
+        if carryFlag {
+            endSec += 1
+            carryFlag = false
+        }
+        if endSec >= 60 {
+            endSec %= 60
+            carryFlag = true
+        }
+        
+        var endMinute = startMinute + durMinute
+        if carryFlag {
+            endMinute += 1
+            carryFlag = false
+        }
+        if endMinute >= 60 {
+            endMinute %= 60
+            carryFlag = true
+        }
+        var endHour = startHour + durHour
+        if carryFlag {
+            endHour += 1
+            carryFlag = false
+        }
+        if endHour > 9 {
+            endHour = 9
+        }
+        
+        self.endTimeField.stringValue = String(format: "%01d", endHour) + ":" + String(format: "%02d", endMinute) + ":" + String(format: "%02d", endSec) + ":" + String(format: "%02d", endMilSec)
         
     }
     
@@ -826,6 +967,14 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         self.tableView.selectRowIndexes(IndexSet(integer: selectedRow), byExtendingSelection: false)
         
+    }
+}
+
+extension String {
+    mutating func replace(_ index: Int, _ newChar: Character) {
+        var chars = Array(self.characters)
+        chars[index] = newChar
+        self = String(chars)
     }
 }
 

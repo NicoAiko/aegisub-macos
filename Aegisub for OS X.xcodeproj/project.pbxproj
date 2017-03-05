@@ -13,6 +13,8 @@
 		0380797C1CDFC73300C10916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0380797A1CDFC73300C10916 /* Main.storyboard */; };
 		03D3E49E1E68BCA700B548C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03D3E49C1E68BCA700B548C7 /* Localizable.strings */; };
 		03DE82BE1E6AAA6000CC017F /* UserSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03DE82BD1E6AAA6000CC017F /* UserSettings.plist */; };
+		03DE82C21E6AAE0100CC017F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE82C11E6AAE0100CC017F /* Preferences.swift */; };
+		03DE82C31E6ABC5400CC017F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03DE82C51E6ABC5400CC017F /* Preferences.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,12 @@
 		03B526C81E6A10A50020D801 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		03B526C91E6A10B40020D801 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03D3E49D1E68BCA700B548C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		03DE82BD1E6AAA6000CC017F /* UserSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UserSettings.plist; path = "Aegisub for OS X/UserSettings.plist"; sourceTree = "<group>"; };
+		03DE82BD1E6AAA6000CC017F /* UserSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserSettings.plist; sourceTree = "<group>"; };
+		03DE82C11E6AAE0100CC017F /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		03DE82C41E6ABC5400CC017F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Preferences.xib; sourceTree = "<group>"; };
+		03DE82C71E6ABC5700CC017F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
+		03DE82C91E6ABC5800CC017F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Preferences.strings; sourceTree = "<group>"; };
+		03DE82CB1E6ABC5900CC017F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Preferences.strings; sourceTree = "<group>"; };
 		03FC72AC1E6A1012006DBC01 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +52,6 @@
 		038079681CDFC73300C10916 = {
 			isa = PBXGroup;
 			children = (
-				03DE82BD1E6AAA6000CC017F /* UserSettings.plist */,
 				038079731CDFC73300C10916 /* Aegisub for OS X */,
 				038079721CDFC73300C10916 /* Products */,
 			);
@@ -66,7 +72,10 @@
 				038079761CDFC73300C10916 /* ViewController.swift */,
 				03D3E49C1E68BCA700B548C7 /* Localizable.strings */,
 				038079781CDFC73300C10916 /* Assets.xcassets */,
+				03DE82BD1E6AAA6000CC017F /* UserSettings.plist */,
 				0380797A1CDFC73300C10916 /* Main.storyboard */,
+				03DE82C51E6ABC5400CC017F /* Preferences.xib */,
+				03DE82C11E6AAE0100CC017F /* Preferences.swift */,
 				0380797D1CDFC73300C10916 /* Info.plist */,
 			);
 			path = "Aegisub for OS X";
@@ -104,7 +113,7 @@
 				TargetAttributes = {
 					038079701CDFC73300C10916 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -137,6 +146,7 @@
 				038079791CDFC73300C10916 /* Assets.xcassets in Resources */,
 				03D3E49E1E68BCA700B548C7 /* Localizable.strings in Resources */,
 				0380797C1CDFC73300C10916 /* Main.storyboard in Resources */,
+				03DE82C31E6ABC5400CC017F /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +159,7 @@
 			files = (
 				038079771CDFC73300C10916 /* ViewController.swift in Sources */,
 				038079751CDFC73300C10916 /* AppDelegate.swift in Sources */,
+				03DE82C21E6AAE0100CC017F /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +185,17 @@
 				03B526C91E6A10B40020D801 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		03DE82C51E6ABC5400CC017F /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03DE82C41E6ABC5400CC017F /* Base */,
+				03DE82C71E6ABC5700CC017F /* en */,
+				03DE82C91E6ABC5800CC017F /* ja */,
+				03DE82CB1E6ABC5900CC017F /* de */,
+			);
+			name = Preferences.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,11 +294,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Aegisub for OS X/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NL.Aegisub-for-OS-X";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -285,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Aegisub for OS X/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

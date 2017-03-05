@@ -1,0 +1,30 @@
+
+/* Class = "NSMenuItem"; title = "Deutsch"; ObjectID = "1ux-Y9-K0V"; */
+"1ux-Y9-K0V.title" = "Deutsch";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "Fvu-ve-dhU"; */
+"Fvu-ve-dhU.title" = "Preferences";
+
+/* Class = "NSTextFieldCell"; title = "Language:"; ObjectID = "McV-J5-541"; */
+"McV-J5-541.title" = "Language:";
+
+/* Class = "NSToolbarItem"; label = "Changelog"; ObjectID = "O66-yz-WIO"; */
+"O66-yz-WIO.label" = "Changelog";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Changelog"; ObjectID = "O66-yz-WIO"; */
+"O66-yz-WIO.paletteLabel" = "Changelog";
+
+/* Class = "NSMenuItem"; title = "English"; ObjectID = "RzQ-XH-fpc"; */
+"RzQ-XH-fpc.title" = "English";
+
+/* Class = "NSMenuItem"; title = "日本語"; ObjectID = "W6i-fK-tVf"; */
+"W6i-fK-tVf.title" = "日本語";
+
+/* Class = "NSToolbarItem"; label = "General"; ObjectID = "xr8-py-oDn"; */
+"xr8-py-oDn.label" = "General";
+
+/* Class = "NSToolbarItem"; paletteLabel = "General"; ObjectID = "xr8-py-oDn"; */
+"xr8-py-oDn.paletteLabel" = "General";
+
+/* Class = "NSTextField"; label = "Please restart the app to let the change take effect."; ObjectID = "aiU-Km-PG8"; */
+"aiU-Km-PG8.title" = "Please restart the app to let the change take effect.";

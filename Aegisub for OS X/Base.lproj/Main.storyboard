@@ -26,7 +26,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="設定" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="設定" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <action selector="showPreferences:" target="Voe-Tx-rLC" id="wPy-Hc-5Uq"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Aegisub for OS Xを隠す" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
@@ -261,17 +265,103 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Aegisub_for_OS_X" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="76" y="-130"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Aegisub for OS X" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Aegisub for OS X" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="E6755D60-6935-4941-B015-DC0548AA62DA" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="small" id="xTJ-bB-kRc">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Auw-5n-tSa"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="WXc-yX-1Ii"/>
+                                <toolbarItem implicitItemIdentifier="9E502CBA-0F4E-410F-931A-F27E1B469310" label="New" paletteLabel="New" id="fpu-lO-oRp">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="80" height="17"/>
+                                    <size key="maxSize" width="129" height="27"/>
+                                    <button key="view" verticalHuggingPriority="750" id="Q4M-z6-wLS">
+                                        <rect key="frame" x="0.0" y="14" width="80" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="ニュー" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KvZ-hQ-Mek">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="838B78C2-AD9A-4BA6-B5AE-C1861FDDDAB6" label="Open" paletteLabel="Open" id="0IR-jr-rBs">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="77" height="17"/>
+                                    <size key="maxSize" width="129" height="27"/>
+                                    <button key="view" verticalHuggingPriority="750" id="ka6-CC-FFL">
+                                        <rect key="frame" x="0.0" y="14" width="77" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="開く" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kTz-kd-ehZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="openDocument:" target="Oky-zY-oP4" id="GPT-k8-hTG"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="C3DA653D-8740-4D59-A51B-4149847FBBB9" label="Save" paletteLabel="Save" id="ob8-mL-kxD">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="79" height="17"/>
+                                    <size key="maxSize" width="129" height="27"/>
+                                    <button key="view" verticalHuggingPriority="750" id="aLG-q9-ucX">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="セーブ" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OfK-P3-9nZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="D44C4E84-12A9-4A00-A0B5-851548AB7C14" label="Style Manager" paletteLabel="Style Manager" id="c80-Xx-lAV">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="127" height="17"/>
+                                    <size key="maxSize" width="129" height="27"/>
+                                    <button key="view" verticalHuggingPriority="750" id="RuY-6o-dj3">
+                                        <rect key="frame" x="0.0" y="14" width="127" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="スタイルマネージャ" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UdS-02-L2q">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="A79EE29B-5C90-4CD0-83DC-9B98C153AF92" label="Preferences" paletteLabel="Preferences" id="rFB-PI-ggz">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="127" height="17"/>
+                                    <size key="maxSize" width="129" height="27"/>
+                                    <button key="view" verticalHuggingPriority="750" id="apf-Hq-RQT">
+                                        <rect key="frame" x="0.0" y="14" width="127" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="環境設定" bezelStyle="texturedRounded" alignment="center" controlSize="mini" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ud6-Bt-oAQ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="showPreferences:" target="Oky-zY-oP4" id="KcE-Tz-vVx"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="fpu-lO-oRp"/>
+                                <toolbarItem reference="0IR-jr-rBs"/>
+                                <toolbarItem reference="ob8-mL-kxD"/>
+                                <toolbarItem reference="Auw-5n-tSa"/>
+                                <toolbarItem reference="c80-Xx-lAV"/>
+                                <toolbarItem reference="WXc-yX-1Ii"/>
+                                <toolbarItem reference="rFB-PI-ggz"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -302,7 +392,7 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zfk-yd-hpI">
-                                                        <rect key="frame" x="20" y="8" width="503" height="124"/>
+                                                        <rect key="frame" x="20" y="8" width="503" height="101"/>
                                                         <textFieldCell key="cell" lineBreakMode="charWrapping" selectable="YES" editable="YES" continuous="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="" drawsBackground="YES" allowsEditingTextAttributes="YES" id="WYI-KL-xXH">
                                                             <font key="font" metaFont="system" size="20"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -391,7 +481,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="oEH-MF-Zvs"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="00:00:00:00" drawsBackground="YES" id="tya-N9-5Eq">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0:00:00:00" drawsBackground="YES" id="tya-N9-5Eq">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -405,7 +495,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="9qa-8y-s6X"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="00:00:05:00" drawsBackground="YES" id="TxG-d1-8on">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="0:00:05:00" drawsBackground="YES" id="TxG-d1-8on">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -416,7 +506,7 @@
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KAa-KL-O3f">
                                                         <rect key="frame" x="292" y="140" width="100" height="22"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" title="00:00:05:00" drawsBackground="YES" id="xkd-kV-vP8">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" title="0:00:05:00" drawsBackground="YES" id="xkd-kV-vP8">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -477,7 +567,7 @@
                                                     <constraint firstItem="PIF-FW-K7W" firstAttribute="leading" secondItem="086-AG-TO7" secondAttribute="trailing" constant="8" symbolic="YES" id="RCg-WO-Kc7"/>
                                                     <constraint firstItem="UbD-gt-rVb" firstAttribute="leading" secondItem="P8P-GJ-eAv" secondAttribute="trailing" constant="16" id="RNe-1k-ER5"/>
                                                     <constraint firstItem="otr-Jk-92O" firstAttribute="baseline" secondItem="K7F-tQ-RR8" secondAttribute="firstBaseline" id="TTH-NO-SP3"/>
-                                                    <constraint firstItem="Zfk-yd-hpI" firstAttribute="top" secondItem="m9G-mJ-hVe" secondAttribute="bottom" constant="8" symbolic="YES" id="UHj-p8-xHV"/>
+                                                    <constraint firstItem="Zfk-yd-hpI" firstAttribute="top" secondItem="m9G-mJ-hVe" secondAttribute="bottom" constant="31" id="UHj-p8-xHV"/>
                                                     <constraint firstItem="Fki-Os-ITT" firstAttribute="leading" secondItem="8et-yB-drk" secondAttribute="leading" id="XZy-xh-ege"/>
                                                     <constraint firstItem="Fki-Os-ITT" firstAttribute="leading" secondItem="hvE-Dw-3n8" secondAttribute="leading" constant="20" symbolic="YES" id="e7s-oq-o7f"/>
                                                     <constraint firstItem="UbD-gt-rVb" firstAttribute="baseline" secondItem="XRM-sd-O29" secondAttribute="baseline" id="g8j-mb-JK9"/>
@@ -797,7 +887,7 @@
                                     <rect key="frame" x="1" y="436" width="1038" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.99707430699763788" horizontal="NO" id="Ugp-kP-vQO">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Ugp-kP-vQO">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
